@@ -11,34 +11,30 @@ public class CommonQueue {
         this.capacity = capacity;
     }
 
-    public void put(Integer value) {
-        synchronized (queue) {
-            while (queue.size() >= capacity) {
-                try {
-                    queue.wait();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+    public synchronized void put(Integer value) {
+        while (queue.size() >= capacity) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-            queue.add(value);
-            System.out.println(Thread.currentThread().getName() + " Value added: " + value);
-            queue.notifyAll();
         }
+        queue.add(value);
+        System.out.println(Thread.currentThread().getName() + " Value added: " + value);
+        notifyAll();
     }
 
-    public void get() {
-        synchronized (queue) {
-            while (queue.isEmpty()) {
-                try {
-                    queue.wait();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+    public synchronized void get() {
+        while (queue.isEmpty()) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-            Integer value = queue.poll();
-            System.out.println(Thread.currentThread().getName() + " Value poll: " + value);
-            queue.notifyAll();
         }
+        Integer value = queue.poll();
+        System.out.println(Thread.currentThread().getName() + " Value poll: " + value);
+        notifyAll();
     }
 
 }
