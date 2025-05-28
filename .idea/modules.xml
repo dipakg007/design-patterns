@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Java.iml" filepath="$PROJECT_DIR$/.idea/modules/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Java.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Java.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Java.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Java.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/design-pattern.iml" filepath="$PROJECT_DIR$/.idea/design-pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/patterns.iml" filepath="$PROJECT_DIR$/patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/patterns.main.iml" filepath="$PROJECT_DIR$/.idea/modules/patterns.main.iml" />
